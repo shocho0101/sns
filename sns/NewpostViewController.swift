@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class NewPostViewController: UIViewController {
-
+    
+    
+    @IBOutlet var PostTextView:UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,14 @@ class NewPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //投稿を送信
+    @IBAction func sendPost(){
+        var post:PFObject = PFObject(className: "Posts")
+        post["content"] = PostTextView.text
+        post["userID"] = PFUser.currentUser()
+        
+        post.saveInBackground()
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     
 }
