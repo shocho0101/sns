@@ -43,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		CA21B5F51B5B97E90027F3AF /* sns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sns.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA21B5F91B5B97E90027F3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA21B5FA1B5B97E90027F3AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA21B5FC1B5B97E90027F3AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA21B5FF1B5B97E90027F3AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,17 +140,8 @@
 				CA21B5FE1B5B97E90027F3AF /* Main.storyboard */,
 				CA21B6011B5B97E90027F3AF /* Images.xcassets */,
 				CA21B6031B5B97E90027F3AF /* LaunchScreen.xib */,
-				CA21B5F81B5B97E90027F3AF /* Supporting Files */,
 			);
 			path = sns;
-			sourceTree = "<group>";
-		};
-		CA21B5F81B5B97E90027F3AF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CA21B5F91B5B97E90027F3AF /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CA21B60D1B5B97E90027F3AF /* snsTests */ = {
