@@ -7,13 +7,13 @@
         <!--Time Line-->
         <scene sceneID="N4q-sa-VN2">
             <objects>
-                <tableViewController id="Nj5-4C-aBi" sceneMemberID="viewController">
+                <tableViewController id="Nj5-4C-aBi" customClass="TimelineTableViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ua7-qL-B0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="slc-zy-s7k">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="slc-zy-s7k">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="slc-zy-s7k" id="Txb-mu-V9v">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +28,7 @@
                     <navigationItem key="navigationItem" title="Time Line" id="otI-0V-ECr">
                         <barButtonItem key="rightBarButtonItem" title="New" id="OtZ-wF-aHq">
                             <connections>
-                                <segue destination="L7G-3b-Q3Z" kind="push" id="24L-dG-Iek"/>
+                                <segue destination="L7G-3b-Q3Z" kind="show" id="24L-dG-Iek"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -41,7 +41,7 @@
         <!--New Post-->
         <scene sceneID="y08-f9-wAU">
             <objects>
-                <viewController id="L7G-3b-Q3Z" sceneMemberID="viewController">
+                <viewController id="L7G-3b-Q3Z" customClass="NewPostViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nk7-ff-RpO"/>
                         <viewControllerLayoutGuide type="bottom" id="YQu-W1-kfP"/>
