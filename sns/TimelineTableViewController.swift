@@ -62,6 +62,10 @@ class TimelineTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //スクロールで更新
+        var refresh = UIRefreshControl()
+        refresh.addTarget(self, action: Selector("loadData"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refresh
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -103,18 +107,36 @@ class TimelineTableViewController: UITableViewController {
                 }
                 
                 self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
             }
         }
         
     }
 
-    
+    //セルの表示
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
 
         let post: PFObject = self.timelineData.objectAtIndex(indexPath.row) as! PFObject
         
         cell.postTextView.text = post.objectForKey("content") as! String
+        
+        var dataFormatter: NSDateFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        cell.timestampTextLabel.text = dataFormatter.stringFromDate(post.createdAt as NSDate!)
+        
+        var finduser: PFQuery = PFUser.query() as PFQuery!
+        finduser.whereKey("objectId", equalTo: post.objectForKey("userID")?.objectId as String!)
+        
+        finduser.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil{
+                let user: PFUser = objects![0] as! PFUser
+                cell.usernameTextLabel.text = user.username
+                
+            }
+        }
+        
+        
         
         
         

@@ -12,6 +12,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xOs-h9-1hT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Item" id="Je1-Wh-gQS"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="slc-zy-s7k" customClass="TableViewCell" customModule="sns" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -39,6 +46,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="postTextView" destination="RPx-oI-vAH" id="sPS-Vc-bpm"/>
                                     <outlet property="timestampTextLabel" destination="Rwl-Ph-gZ9" id="zZ7-r2-3zm"/>
