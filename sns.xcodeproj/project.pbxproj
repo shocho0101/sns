@@ -30,6 +30,7 @@
 		CA21B63A1B5E36F70027F3AF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA21B6391B5E36F70027F3AF /* libsqlite3.dylib */; };
 		CA21B6441B5E4BF50027F3AF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */; };
 		CA21B6461B5E4C3D0027F3AF /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */; };
+		CA21B6481B5F90840027F3AF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6471B5F90840027F3AF /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		CA21B6391B5E36F70027F3AF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		CA21B6471B5F90840027F3AF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				CA21B5FA1B5B97E90027F3AF /* AppDelegate.swift */,
 				CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */,
 				CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */,
+				CA21B6471B5F90840027F3AF /* TableViewCell.swift */,
 				CA21B5FE1B5B97E90027F3AF /* Main.storyboard */,
 				CA21B6011B5B97E90027F3AF /* Images.xcassets */,
 				CA21B6031B5B97E90027F3AF /* LaunchScreen.xib */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA21B6441B5E4BF50027F3AF /* NewPostViewController.swift in Sources */,
+				CA21B6481B5F90840027F3AF /* TableViewCell.swift in Sources */,
 				CA21B6461B5E4C3D0027F3AF /* TimelineTableViewController.swift in Sources */,
 				CA21B5FB1B5B97E90027F3AF /* AppDelegate.swift in Sources */,
 			);

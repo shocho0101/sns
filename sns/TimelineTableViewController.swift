@@ -11,8 +11,11 @@ import Parse
 
 class TimelineTableViewController: UITableViewController {
     
-    //アプリ起動時のログインアラート
+        //アプリ起動時のログインアラート
     override func viewDidAppear(animated: Bool) {
+        
+        loadData()
+        
         if PFUser.currentUser() == nil{
             var loginAlert: UIAlertController = UIAlertController(title: "Sign UP/IN", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
             
@@ -76,24 +79,50 @@ class TimelineTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return timelineData.count
+    }
+    
+    //Post内容の取得
+    var timelineData: NSMutableArray = NSMutableArray()
+    
+    func loadData(){
+        timelineData.removeAllObjects()
+        
+        var findTimelineData:PFQuery = PFQuery(className: "Posts")
+        
+        findTimelineData.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil{
+                for var i = objects!.count; i > 0; --i{
+                    self.timelineData.addObject(objects![i - 1])
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
 
-        // Configure the cell...
+        let post: PFObject = self.timelineData.objectAtIndex(indexPath.row) as! PFObject
+        
+        cell.postTextView.text = post.objectForKey("content") as! String
+        
+        
+        
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
