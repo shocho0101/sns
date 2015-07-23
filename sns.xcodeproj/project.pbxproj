@@ -31,6 +31,9 @@
 		CA21B6441B5E4BF50027F3AF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */; };
 		CA21B6461B5E4C3D0027F3AF /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */; };
 		CA21B6481B5F90840027F3AF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6471B5F90840027F3AF /* TableViewCell.swift */; };
+		CA81ED3E1B5FE80A008EFEA0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA81ED3D1B5FE80A008EFEA0 /* SignupViewController.swift */; };
+		CA81ED401B611BF1008EFEA0 /* settingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA81ED3F1B611BF1008EFEA0 /* settingsTableViewController.swift */; };
+		CA81ED421B612AB1008EFEA0 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA81ED411B612AB1008EFEA0 /* loginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		CA21B6471B5F90840027F3AF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CA81ED3D1B5FE80A008EFEA0 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		CA81ED3F1B611BF1008EFEA0 /* settingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsTableViewController.swift; sourceTree = "<group>"; };
+		CA81ED411B612AB1008EFEA0 /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,9 @@
 				CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */,
 				CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */,
 				CA21B6471B5F90840027F3AF /* TableViewCell.swift */,
+				CA81ED3D1B5FE80A008EFEA0 /* SignupViewController.swift */,
+				CA81ED3F1B611BF1008EFEA0 /* settingsTableViewController.swift */,
+				CA81ED411B612AB1008EFEA0 /* loginViewController.swift */,
 				CA21B5FE1B5B97E90027F3AF /* Main.storyboard */,
 				CA21B6011B5B97E90027F3AF /* Images.xcassets */,
 				CA21B6031B5B97E90027F3AF /* LaunchScreen.xib */,
@@ -281,8 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA81ED421B612AB1008EFEA0 /* loginViewController.swift in Sources */,
 				CA21B6441B5E4BF50027F3AF /* NewPostViewController.swift in Sources */,
 				CA21B6481B5F90840027F3AF /* TableViewCell.swift in Sources */,
+				CA81ED401B611BF1008EFEA0 /* settingsTableViewController.swift in Sources */,
+				CA81ED3E1B5FE80A008EFEA0 /* SignupViewController.swift in Sources */,
 				CA21B6461B5E4C3D0027F3AF /* TimelineTableViewController.swift in Sources */,
 				CA21B5FB1B5B97E90027F3AF /* AppDelegate.swift in Sources */,
 			);
@@ -416,6 +428,7 @@
 					"/Users/sho/Downloads/parse-library-1-2",
 				);
 				INFOPLIST_FILE = sns/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -430,6 +443,7 @@
 					"/Users/sho/Downloads/parse-library-1-2",
 				);
 				INFOPLIST_FILE = sns/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -488,6 +502,7 @@
 				CA21B6161B5B97E90027F3AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA21B6171B5B97E90027F3AF /* Build configuration list for PBXNativeTarget "snsTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +511,7 @@
 				CA21B6191B5B97E90027F3AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

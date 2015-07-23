@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F5DD96EC-DC7C-4D3A-95EE-E8704D2C7E58</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>sns</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>24FEA6B99B20F6DA7EC62D068B492F973775A8E9</key>
 		<string>https://github.com/shocho0101/sns.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>sns.xcodeproj/project.xcworkspace</string>
+	<string>sns.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>24FEA6B99B20F6DA7EC62D068B492F973775A8E9</key>

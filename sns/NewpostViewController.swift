@@ -16,7 +16,9 @@ class NewPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
+        PostTextView.becomeFirstResponder() 
         // Do any additional setup after loading the view.
     }
 

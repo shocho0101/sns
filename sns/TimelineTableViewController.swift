@@ -13,49 +13,33 @@ class TimelineTableViewController: UITableViewController {
     
         //アプリ起動時のログインアラート
     override func viewDidAppear(animated: Bool) {
-        
         loadData()
         
+        
         if PFUser.currentUser() == nil{
-            var loginAlert: UIAlertController = UIAlertController(title: "Sign UP/IN", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
+            var loginAlert: UIAlertController = UIAlertController(title: "Sign UP/Login", message: "Please choose Sign UP or Login.", preferredStyle: UIAlertControllerStyle.Alert)
             
-            //ユーザーネームとパスワードの入力欄
-            loginAlert.addTextFieldWithConfigurationHandler({ (username:UITextField!) -> Void in
-                username.placeholder = "user name"
-            })
-            loginAlert.addTextFieldWithConfigurationHandler({ (password:UITextField!) -> Void in
-                password.placeholder = "password"
-                password.secureTextEntry = true
-            })
+            
+            loginAlert.addAction(UIAlertAction(title: "Sign UP", style: UIAlertActionStyle.Default, handler: {
+                action in
+                
+                let signupviewcontroller: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("signup") as! UIViewController
+                
+                self.presentViewController(signupviewcontroller as UIViewController, animated: true, completion: nil)
+            }))
             
             loginAlert.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default, handler: {
                 action in
-                //textfieldの取得
-                let textfields: [UITextField] = loginAlert.textFields as! [UITextField]
-                let usernameTextfield: UITextField = textfields[0]
-                let passwordTextfield: UITextField = textfields[1]
+                let loginviewcontroller: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("login") as! UIViewController
                 
-                var user: PFUser = PFUser()
-                
-                //textfiledに入力された内容を変数に代入
-                user.username = usernameTextfield.text
-                user.password = passwordTextfield.text
-                
-                //parseに送信
-                user.signUpInBackgroundWithBlock({ (succeeded, error) -> Void in
-                    if error == nil{
-                        println("success")
-                    }else{
-                        println(error)
-                    }
-                })
-                
-                
-                
+                self.presentViewController(loginviewcontroller as UIViewController, animated: true, completion: nil)
             }))
+
             
             self.presentViewController(loginAlert, animated: true, completion: nil)
         }
+            
+        
     }
     
     
