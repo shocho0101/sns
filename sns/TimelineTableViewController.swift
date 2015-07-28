@@ -12,31 +12,18 @@ import Parse
 class TimelineTableViewController: UITableViewController {
     
         //アプリ起動時のログインアラート
+    
+    
     override func viewDidAppear(animated: Bool) {
+        
         loadData()
         
-        
         if PFUser.currentUser() == nil{
-            var loginAlert: UIAlertController = UIAlertController(title: "Sign UP/Login", message: "Please choose Sign UP or Login.", preferredStyle: UIAlertControllerStyle.Alert)
+            let loginviewcontroller: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("login") as! UIViewController
             
-            
-            loginAlert.addAction(UIAlertAction(title: "Sign UP", style: UIAlertActionStyle.Default, handler: {
-                action in
-                
-                let signupviewcontroller: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("signup") as! UIViewController
-                
-                self.presentViewController(signupviewcontroller as UIViewController, animated: true, completion: nil)
-            }))
-            
-            loginAlert.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default, handler: {
-                action in
-                let loginviewcontroller: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("login") as! UIViewController
-                
                 self.presentViewController(loginviewcontroller as UIViewController, animated: true, completion: nil)
-            }))
 
             
-            self.presentViewController(loginAlert, animated: true, completion: nil)
         }
             
         
@@ -100,8 +87,13 @@ class TimelineTableViewController: UITableViewController {
     //セルの表示
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
-
+        
         let post: PFObject = self.timelineData.objectAtIndex(indexPath.row) as! PFObject
+        
+        cell.postTextView.alpha = 0
+        cell.timestampTextLabel.alpha = 0
+        cell.usernameTextLabel.alpha = 0
+        
         
         cell.postTextView.text = post.objectForKey("content") as! String
         
@@ -117,6 +109,12 @@ class TimelineTableViewController: UITableViewController {
                 let user: PFUser = objects![0] as! PFUser
                 cell.usernameTextLabel.text = user.username
                 
+                UIView.animateWithDuration(0.3, animations: {
+                    cell.postTextView.alpha = 1
+                    cell.timestampTextLabel.alpha = 1
+                    cell.usernameTextLabel.alpha = 1
+                })
+                
             }
         }
         
@@ -125,7 +123,8 @@ class TimelineTableViewController: UITableViewController {
         
         
         
-
+        
+        
         return cell
     }
     

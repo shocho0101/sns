@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Time Line-->
+        <!--タイムライン-->
         <scene sceneID="N4q-sa-VN2">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nj5-4C-aBi" customClass="TimelineTableViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,12 +20,12 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwl-Ph-gZ9">
                                             <rect key="frame" x="225" y="8" width="142" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPx-oI-vAH">
-                                            <rect key="frame" x="8" y="37" width="359" height="50"/>
+                                            <rect key="frame" x="29" y="37" width="338" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -33,7 +33,7 @@
                                         </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-OA-uqV">
                                             <rect key="frame" x="8" y="8" width="163" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -52,15 +52,17 @@
                             <outlet property="delegate" destination="Nj5-4C-aBi" id="zRJ-nP-GyM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Time Line" id="otI-0V-ECr">
+                    <navigationItem key="navigationItem" title="タイムライン" id="otI-0V-ECr">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="OtZ-wF-aHq">
                             <connections>
-                                <segue destination="L7G-3b-Q3Z" kind="show" id="24L-dG-Iek"/>
+                                <segue destination="n5s-eU-Cnt" kind="popoverPresentation" popoverAnchorBarButtonItem="OtZ-wF-aHq" id="24L-dG-Iek">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="settings" style="plain" id="SuO-Lg-Mtq">
+                        <barButtonItem key="rightBarButtonItem" title="設定" id="xn0-i0-tXs">
                             <connections>
-                                <segue destination="Fhl-C1-fOM" kind="show" id="peZ-Wa-rxw"/>
+                                <segue destination="Fhl-C1-fOM" kind="show" id="bPE-Nf-aKu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -70,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="1543.5" y="384.5"/>
         </scene>
-        <!--Sign UP-->
+        <!--アカウント作成-->
         <scene sceneID="dHY-7o-5KA">
             <objects>
                 <viewController id="uyY-nx-29Q" customClass="SignupViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,42 +84,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxr-iY-MPm">
-                                <rect key="frame" x="168" y="129" width="182" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxr-iY-MPm">
+                                <rect key="frame" x="16" y="121" width="334" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k66-zX-SRu">
-                                <rect key="frame" x="168" y="169" width="182" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="パスワードの確認" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k66-zX-SRu">
+                                <rect key="frame" x="16" y="158" width="334" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lg-EP-S6f">
-                                <rect key="frame" x="25" y="95" width="89" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ユーザー名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Lu-4q-ykD">
+                                <rect key="frame" x="16" y="84" width="334" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMe-EH-fX0">
-                                <rect key="frame" x="25" y="133" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwS-2B-LlV">
-                                <rect key="frame" x="25" y="172" width="135" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Lu-4q-ykD">
-                                <rect key="frame" x="168" y="91" width="182" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNl-SC-Sdg">
-                                <rect key="frame" x="131" y="244" width="112" height="30"/>
-                                <state key="normal" title="Sign up">
+                                <rect key="frame" x="16" y="221" width="334" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="作成">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -127,13 +114,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sign UP" id="jwx-Sb-29u">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="qcf-xb-ZTe">
-                            <connections>
-                                <action selector="cancel" destination="uyY-nx-29Q" id="VuB-xF-05n"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="アカウント作成" id="jwx-Sb-29u"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="againTextfield" destination="k66-zX-SRu" id="M4c-8k-0tF"/>
@@ -143,9 +124,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29K-lE-3rX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543.5" y="1100.5"/>
+            <point key="canvasLocation" x="2005.5" y="1128.5"/>
         </scene>
-        <!--settings-->
+        <!--設定-->
         <scene sceneID="PuQ-yR-ssb">
             <objects>
                 <tableViewController id="Fhl-C1-fOM" customClass="settingsTableViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +143,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h90-r4-d5U" id="bhp-sZ-Li8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ipb-vF-ZaI">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ユーザー名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ipb-vF-ZaI">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -187,7 +168,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wPJ-b9-Z2G" id="q6b-Mc-dW6">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="sign out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="djT-re-jl2">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ログアウト" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="djT-re-jl2">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -204,7 +185,7 @@
                             <outlet property="delegate" destination="Fhl-C1-fOM" id="AUz-OY-Ywv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="settings" id="69N-Yq-QmR"/>
+                    <navigationItem key="navigationItem" title="設定" id="69N-Yq-QmR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="usernameLabel" destination="R1n-Qy-7dt" id="YS9-GC-ZkC"/>
@@ -227,24 +208,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" scrollEnabled="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="NQF-MK-cov">
-                                <rect key="frame" x="0.0" y="64" width="375" height="167"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="16" y="72" width="343" height="167"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPZ-BP-tZd">
-                                <rect key="frame" x="0.0" y="245" width="375" height="30"/>
-                                <state key="normal" title="Post!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendPost" destination="L7G-3b-Q3Z" eventType="touchUpInside" id="klg-fV-lQE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Post" id="bbt-Nk-BcF"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="1Jf-PD-Zmd"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="New Post" id="bbt-Nk-BcF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wu3-xa-UFM">
+                            <connections>
+                                <action selector="cancel" destination="L7G-3b-Q3Z" id="qPo-tb-I2d"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="xPE-I8-epf">
+                            <connections>
+                                <action selector="sendPost" destination="L7G-3b-Q3Z" id="XZP-JN-cgX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="PostTextView" destination="NQF-MK-cov" id="QZc-zr-LFO"/>
@@ -252,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuO-6E-iUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014.5" y="384.5"/>
+            <point key="canvasLocation" x="2601.5" y="384.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jyg-fI-Bg9">
@@ -262,6 +249,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tfi-7X-IDk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -272,25 +264,7 @@
             </objects>
             <point key="canvasLocation" x="731" y="385"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="P50-5t-UST">
-            <objects>
-                <navigationController storyboardIdentifier="signup" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kqq-Du-JJs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v6R-U3-1U6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uyY-nx-29Q" kind="relationship" relationship="rootViewController" id="Edi-3K-fRj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hhP-fk-yea" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="731" y="1058"/>
-        </scene>
-        <!--Login-->
+        <!--ログイン-->
         <scene sceneID="uHP-ac-FGw">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lrk-GD-WcL" customClass="loginViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
@@ -302,47 +276,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-Ji-NAL">
-                                <rect key="frame" x="168" y="128" width="182" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-Ji-NAL">
+                                <rect key="frame" x="16" y="121" width="343" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaT-Jj-E9X">
-                                <rect key="frame" x="25" y="94" width="89" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ユーザー名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-u7-vLH">
+                                <rect key="frame" x="16" y="84" width="343" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-nw-8fJ">
-                                <rect key="frame" x="25" y="132" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-u7-vLH">
-                                <rect key="frame" x="168" y="90" width="182" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aN-IB-8OT">
-                                <rect key="frame" x="164" y="212" width="38" height="30"/>
-                                <state key="normal" title="Login">
+                                <rect key="frame" x="16" y="186" width="343" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="login" destination="Lrk-GD-WcL" eventType="touchUpInside" id="8KM-5c-Win"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyX-cj-bQ7">
+                                <rect key="frame" x="104" y="245" width="167" height="30"/>
+                                <state key="normal" title="アカウントを作成する＞">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uyY-nx-29Q" kind="show" id="ZIi-nJ-Pcs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="Xdw-Xr-voO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="jnd-wf-3mg">
-                            <connections>
-                                <action selector="cancel" destination="Lrk-GD-WcL" id="nY3-sO-br5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="ログイン" id="Xdw-Xr-voO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passwordTextfield" destination="Yjf-Ji-NAL" id="O6n-Qa-pa6"/>
@@ -351,25 +319,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6o-5a-9Eq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543.5" y="1888.5"/>
+            <point key="canvasLocation" x="1543.5" y="1128.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="73u-wZ-VRj">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Atm-Do-gMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="login" automaticallyAdjustsScrollViewInsets="NO" id="cn1-ev-afi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FIk-g0-kII">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="Lrk-GD-WcL" kind="relationship" relationship="rootViewController" id="eKa-s5-V38"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Atm-Do-gMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="1889"/>
+            <point key="canvasLocation" x="731" y="1067"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="omH-AL-qEF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n5s-eU-Cnt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fmd-Xb-VZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L7G-3b-Q3Z" kind="relationship" relationship="rootViewController" id="BZ0-cV-zbm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VYg-j1-6ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014.5" y="384.5"/>
         </scene>
     </scenes>
 </document>

@@ -28,12 +28,12 @@
 		CA21B6361B5E36D00027F3AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA21B6351B5E36D00027F3AF /* SystemConfiguration.framework */; };
 		CA21B6381B5E36DC0027F3AF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA21B6371B5E36DC0027F3AF /* libz.dylib */; };
 		CA21B63A1B5E36F70027F3AF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA21B6391B5E36F70027F3AF /* libsqlite3.dylib */; };
-		CA21B6441B5E4BF50027F3AF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */; };
 		CA21B6461B5E4C3D0027F3AF /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */; };
 		CA21B6481B5F90840027F3AF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21B6471B5F90840027F3AF /* TableViewCell.swift */; };
 		CA81ED3E1B5FE80A008EFEA0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA81ED3D1B5FE80A008EFEA0 /* SignupViewController.swift */; };
 		CA81ED401B611BF1008EFEA0 /* settingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA81ED3F1B611BF1008EFEA0 /* settingsTableViewController.swift */; };
 		CA81ED421B612AB1008EFEA0 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA81ED411B612AB1008EFEA0 /* loginViewController.swift */; };
+		CACFDD2E1B67D42400C6FE09 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFDD2D1B67D42400C6FE09 /* NewPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,12 +71,12 @@
 		CA21B6351B5E36D00027F3AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CA21B6371B5E36DC0027F3AF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CA21B6391B5E36F70027F3AF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		CA21B6471B5F90840027F3AF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CA81ED3D1B5FE80A008EFEA0 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CA81ED3F1B611BF1008EFEA0 /* settingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsTableViewController.swift; sourceTree = "<group>"; };
 		CA81ED411B612AB1008EFEA0 /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		CACFDD2D1B67D42400C6FE09 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +147,8 @@
 			children = (
 				CA21B5FA1B5B97E90027F3AF /* AppDelegate.swift */,
 				CA21B6451B5E4C3D0027F3AF /* TimelineTableViewController.swift */,
-				CA21B6431B5E4BF50027F3AF /* NewPostViewController.swift */,
 				CA21B6471B5F90840027F3AF /* TableViewCell.swift */,
+				CACFDD2D1B67D42400C6FE09 /* NewPostViewController.swift */,
 				CA81ED3D1B5FE80A008EFEA0 /* SignupViewController.swift */,
 				CA81ED3F1B611BF1008EFEA0 /* settingsTableViewController.swift */,
 				CA81ED411B612AB1008EFEA0 /* loginViewController.swift */,
@@ -291,9 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA81ED421B612AB1008EFEA0 /* loginViewController.swift in Sources */,
-				CA21B6441B5E4BF50027F3AF /* NewPostViewController.swift in Sources */,
 				CA21B6481B5F90840027F3AF /* TableViewCell.swift in Sources */,
 				CA81ED401B611BF1008EFEA0 /* settingsTableViewController.swift in Sources */,
+				CACFDD2E1B67D42400C6FE09 /* NewPostViewController.swift in Sources */,
 				CA81ED3E1B5FE80A008EFEA0 /* SignupViewController.swift in Sources */,
 				CA21B6461B5E4C3D0027F3AF /* TimelineTableViewController.swift in Sources */,
 				CA21B5FB1B5B97E90027F3AF /* AppDelegate.swift in Sources */,

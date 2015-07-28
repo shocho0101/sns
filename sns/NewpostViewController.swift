@@ -17,6 +17,8 @@ class NewPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        PostTextView.layer.borderWidth = 1
+        PostTextView.layer.borderColor = UIColor.blackColor().CGColor
 
         PostTextView.becomeFirstResponder() 
         // Do any additional setup after loading the view.
@@ -34,7 +36,11 @@ class NewPostViewController: UIViewController {
         post["userID"] = PFUser.currentUser()
         
         post.saveInBackground()
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    @IBAction func cancel(){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

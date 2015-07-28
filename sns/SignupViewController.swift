@@ -40,9 +40,7 @@ class SignupViewController: UIViewController {
                 //parseに送信
                 user.signUpInBackgroundWithBlock({ (succeeded, error) -> Void in
                     if error == nil{
-                        println("successsss")
-//                        let timelinetableviewcontroller: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("timeline") as! UIViewController
-//                        self.presentViewController(timelinetableviewcontroller, animated: true, completion: nil)
+                        
                         self.dismissViewControllerAnimated(true, completion: nil)
                     }else{
                         println(error)
@@ -53,9 +51,6 @@ class SignupViewController: UIViewController {
         }
     }
     
-    @IBAction func cancel(){
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     
 
     /*

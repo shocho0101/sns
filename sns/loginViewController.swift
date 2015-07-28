@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class loginViewController: UIViewController {
+class loginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -17,7 +17,16 @@ class loginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextfield.delegate = self
+        passwordTextfield.delegate = self
+        
         passwordTextfield.secureTextEntry = true
+        usernameTextfield.becomeFirstResponder()
+        
+        usernameTextfield.layer.borderColor = UIColor.grayColor().CGColor
+        usernameTextfield.layer.borderWidth = 1
+        passwordTextfield.layer.borderColor = UIColor.grayColor().CGColor
+        passwordTextfield.layer.
         // Do any additional setup after loading the view.
     }
 
@@ -27,27 +36,57 @@ class loginViewController: UIViewController {
     }
     
     @IBAction func login(){
-        var user: PFUser = PFUser()
         
-        //textfiledに入力された内容を変数に代入
-        user.username = usernameTextfield.text
-        user.password = passwordTextfield.text
+        if usernameTextfield.text != "" && passwordTextfield != ""{
+            var user: PFUser = PFUser()
+            
+            //textfiledに入力された内容を変数に代入
+            user.username = usernameTextfield.text
+            user.password = passwordTextfield.text
+            
+            //parseに送信
+            PFUser.logInWithUsernameInBackground(usernameTextfield.text, password: passwordTextfield.text, block: { (user, error) -> Void in
+                if error == nil{
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }else{
+                    let alert: UIAlertController = UIAlertController(title: "エラー", message: "ユーザー名かパスワードが間違っています。", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    let okbutton: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                        println("OK")
+                    })
+                    alert.addAction(okbutton)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                
+                
+            })
+        }else{
+            //未入力の欄がある場合にalertを表示
+            let alert: UIAlertController = UIAlertController(title: "エラー", message: "ユーザー名とパスワードを入力してください。", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okbutton: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                println("OK")
+            })
+            alert.addAction(okbutton)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
-        //parseに送信
-        PFUser.logInWithUsernameInBackground(usernameTextfield.text, password: passwordTextfield.text, block: { (user, error) -> Void in
-            if error == nil{
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-            
-            
-        })
+        
     }
     
-    @IBAction func cancel(){
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField{
+        case usernameTextfield:
+            passwordTextfield.becomeFirstResponder()
+        case passwordTextfield:
+            login()
+        default:
+            println("textfiedldshuldreturn error")
+        }
+    return false
     }
     
-
+   
     /*
     // MARK: - Navigation
 
