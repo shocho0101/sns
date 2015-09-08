@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -21,6 +21,12 @@ class SignupViewController: UIViewController {
         againTextfield.secureTextEntry = true
         // Do any additional setup after loading the view.
         
+        usernameTextfield.delegate = self
+        passwordTextfield.delegate  = self
+        againTextfield.delegate = self
+        
+        
+        usernameTextfield.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +35,7 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signup(){
-        if usernameTextfield.text != nil && passwordTextfield != nil && againTextfield.text != nil{
+        if usernameTextfield.text != "" && passwordTextfield != "" && againTextfield.text != ""{
             if passwordTextfield.text == againTextfield.text{
                 var user: PFUser = PFUser()
                 
@@ -43,15 +49,52 @@ class SignupViewController: UIViewController {
                         
                         self.dismissViewControllerAnimated(true, completion: nil)
                     }else{
-                        println(error)
+                       self.alert("エラー", message: "アカウントを作成できませんでした")
+                        
                     }
                 })
 
+            }else{
+                //未入力の欄があるときにalertを表示
+                
+                alert("エラー", message: "パスワードが間違っています")
+                
+                passwordTextfield.text = ""
+                againTextfield.text = ""
+                passwordTextfield.becomeFirstResponder()
+
             }
+        }else{
+            alert("エラー", message: "未入力の欄があります")
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField{
+        case usernameTextfield:
+            passwordTextfield.becomeFirstResponder()
+        case passwordTextfield:
+            againTextfield.becomeFirstResponder()
+        case againTextfield:
+            signup()
+        default:
+            println("error")
+        }
+        
+        return false
+    }
     
+    func alert(title: String!, message: String!){
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okbutton: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            println("OK")
+            
+        })
+        alert.addAction(okbutton)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
 
     /*
     // MARK: - Navigation

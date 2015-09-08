@@ -18,7 +18,7 @@ class NewPostViewController: UIViewController {
         super.viewDidLoad()
         
         PostTextView.layer.borderWidth = 1
-        PostTextView.layer.borderColor = UIColor.blackColor().CGColor
+        PostTextView.layer.borderColor = UIColor.grayColor().CGColor
 
         PostTextView.becomeFirstResponder() 
         // Do any additional setup after loading the view.

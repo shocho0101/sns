@@ -23,10 +23,6 @@ class loginViewController: UIViewController, UITextFieldDelegate {
         passwordTextfield.secureTextEntry = true
         usernameTextfield.becomeFirstResponder()
         
-        usernameTextfield.layer.borderColor = UIColor.grayColor().CGColor
-        usernameTextfield.layer.borderWidth = 1
-        passwordTextfield.layer.borderColor = UIColor.grayColor().CGColor
-        passwordTextfield.layer.
         // Do any additional setup after loading the view.
     }
 
@@ -83,6 +79,7 @@ class loginViewController: UIViewController, UITextFieldDelegate {
         default:
             println("textfiedldshuldreturn error")
         }
+    
     return false
     }
     
